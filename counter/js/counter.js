@@ -1,27 +1,17 @@
 'use strict';
+const connection = new WebSocket('wss://neto-api.herokuapp.com/counter');
+const counter = document.querySelector('.counter');
 
-document.addEventListener('DOMContentLoaded', onLoad);
+const error = document.querySelector('.errors');
 
-function onLoad() {
-  counter.innerHTML = localStorage.counter ? localStorage.counter : 0;
-  localStorage.setItem('counter', counter.innerHTML);
-}
+connection.addEventListener('open', event => console.log('Its alive'));
 
-let buttons = document.querySelector(".wrap-btns");
-let counter = document.getElementById('counter');
+connection.addEventListener('message', function (event) {
+  const data = JSON.parse(event.data);
+  counter.innerText = data.connections;
+  error.innerText = data.errors;
+});
 
-buttons.addEventListener('click', onClick);
-
-// function onClick() {
-//   if (event.target.id === 'increment') counter.innerHTML++
-//   if (event.target.id === 'decrement' && counter.innerHTML > 0) counter.innerHTML--
-//   if (event.target.id === 'reset') counter.innerHTML = 0;
-//   localStorage.setItem('counter', counter.innerHTML);
-// }
-
-function onClick() {
-  if (event.target.id === 'increment') localStorage.counter++;
-  if (event.target.id === 'decrement' && localStorage.counter > 0) localStorage.counter--;
-  if (event.target.id === 'reset') localStorage.counter = 0;
-  counter.innerText = localStorage.counter;
-}
+connection.addEventListener('beforeunload', () => {
+  connection.close(1000, 'Its done')
+})
