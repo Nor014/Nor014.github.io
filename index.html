@@ -14,9 +14,22 @@
   <li><a href='chat/index.html'>Chat</a></li>
 </ul>
 
-<!-- <h2 class='secret'> GGreatGGaame</h2> -->
+<h2 class='secret'> GGreatGGaame</h2>
 
-<!-- <ul class="secret">
+<ul class="secret">
   <li><a href="Game/js-game-1.4.1/index.html">Click here</a></li>
 </ul>
- -->
+
+<script>
+  let secret = document.querySelectorAll('.secret');
+  secret.forEach(el => el.style.display = 'none');
+  document.addEventListener('keydown', onKey);
+
+  let counter = 0;
+
+  function onKey(event) {
+    let code = ["KeyK", "KeyJ", "BracketLeft", "KeyK", "KeyJ", "BracketLeft", "KeyK", "KeyJ", "BracketLeft"];
+    event.code === code[counter] ? counter++ : counter = 0;
+    if (counter === code.length) secret.forEach(el => el.style.display = 'block');
+  }
+</script>
