@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Ограничение частоты функций</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div class="block">
+		<span class="left_eye"></span>
+		<span class="right_eye"></span>
+		<p class="message">Ты почему перестал печатать?</p>
+	</div>
+
+	<textarea class="textarea" placeholder="Введите текст..."></textarea>
+
+	<script>
+		const textarea = document.querySelector('.textarea'),
+			block = document.querySelector('.block'),
+			message = document.querySelector('.message')
+
+		let isFirst = true;
+
+		textarea.addEventListener('focus', (event) => {
+			block.classList.add('active')
+		})
+
+		textarea.addEventListener('blur', (event) => {
+			block.classList.remove('active')
+		})
+
+		function debounce(callback, delay) {
+			let timeout;
+			console.log(timeout)
+			return () => {
+				clearTimeout(timeout);
+				timeout = setTimeout(function () {
+					timeout = null;
+					callback()
+					isFirst = true
+				}, delay)
+
+			}
+		}
+
+		textarea.addEventListener('keydown', () => {
+			if (isFirst) {
+				message.classList.remove('view')
+				block.classList.add('active')
+				console.log(111)
+				isFirst = false;
+			}
+		})
+
+		textarea.addEventListener('keydown', debounce(() => {
+			message.classList.add('view')
+			block.classList.remove('active')
+		}, 2000));
+
+	</script>
+</body>
+
+</html>
