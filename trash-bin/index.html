@@ -29,6 +29,11 @@
 		movingElements.forEach(el => el.addEventListener('mousedown', (event) => {
 
 			movingElement = event.target;
+			movingElement.style.zIndex = '2';
+
+			movingElement.classList.add('moving')
+			console.log(movingElement)
+
 			data = el.getBoundingClientRect();
 
 			startLeft = el.style.left;
@@ -37,30 +42,33 @@
 			el.style.left = event.pageX - data.width / 2 + 'px'
 			el.style.top = event.pageY - data.height / 2 + 'px'
 
-			el.addEventListener('mousemove', (event) => {
-				if (movingElement) {
-					event.preventDefault()
-					el.style.left = event.pageX - data.width / 2 + 'px'
-					el.style.top = event.pageY - data.height / 2 + 'px'
-				}
-			})
-
-			el.addEventListener('mouseup', (event) => {
-				if (movingElement) {
-					movingElement.style.visibility = 'hidden';
-					const check = document.elementFromPoint(event.pageX, event.pageY).closest('#trash_bin')
-					movingElement.style.visibility = 'visible';
-					if (check) {
-						check.appendChild(movingElement);
-						movingElement = null;
-					} else {
-						el.style.left = startLeft
-						el.style.top = startTop;
-						movingElement = null;
-					}
-				}
-			})
 		}))
+
+		document.addEventListener('mousemove', (event) => {
+			if (movingElement) {
+				event.preventDefault()
+				movingElement.style.left = event.pageX - data.width / 2 + 'px'
+				movingElement.style.top = event.pageY - data.height / 2 + 'px'
+			}
+		})
+
+		document.addEventListener('mouseup', (event) => {
+			if (movingElement) {
+				movingElement.style.visibility = 'hidden';
+				const check = document.elementFromPoint(event.pageX, event.pageY).closest('#trash_bin')
+				movingElement.style.visibility = 'visible';
+				if (check) {
+					check.appendChild(movingElement);
+					movingElement = null;
+				} else {
+					movingElement.classList.remove('moving')
+					movingElement.style.left = startLeft
+					movingElement.style.top = startTop;
+					movingElement.style.zIndex = '1';
+					movingElement = null;
+				}
+			}
+		})
 
 	</script>
 </body>
