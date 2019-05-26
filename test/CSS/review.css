@@ -1,0 +1,104 @@
+.reviews_section {
+  width: 100%;
+  background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 1088px;
+}
+
+.reviews_section .scheme_headline {
+  margin-top: 4%;
+}
+
+.quotes {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.review_block {
+  display: flex;
+}
+
+.slide_button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide_button button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.wrapper {
+  flex: 2.5;
+  line-height: 2em;
+  overflow:hidden;
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+}
+
+.review {
+  position: absolute;
+  left: 100%;
+  transition: 1s all;
+  width: 100%;
+  padding: 0 5% 0 5%;
+}
+
+.review.slide_back {
+  left: -100%;
+  transition: all 1s;
+}
+
+.review.active {
+  left: 0;
+  transition: 1s all;
+}
+
+.author {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 33%;
+}
+
+.author_information {
+  text-align: center;
+}
+
+.author_avatar  {
+  width: 170px;
+  height: 170px;
+  border: 1px solid #6ec46a;
+  border-radius: 50%;
+  border-width: 0.3em;
+  overflow: hidden;
+  background-position-x: 50%;
+}
+
+.pagination {
+  display: flex;
+  width: 60px;
+  justify-content: space-between;
+}
+
+.pagination_item {
+  width: 10px;
+  height: 10px;
+  background-color: #d0cfd0;
+  border-radius: 50%;
+}
+
+.pagination_item.current {
+  background-color: #fafafa;
+  border: 2px solid #282528;
+} 

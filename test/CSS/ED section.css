@@ -1,0 +1,185 @@
+.product_benefits {
+  display: flex;
+  width: 100%;
+  background-color: #ffffff;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ED_information {
+  display: flex;
+  flex-direction: column;
+  width: 73%;
+  height: 1600px;
+  justify-content: space-around;
+}
+
+.ED_headline {
+  align-self: center;
+  color: #282528;
+  font-size: 1.75em;
+  text-transform: uppercase;
+  justify-self: flex-start;
+  margin-top: 4%;
+}
+
+.ED_headline h3::before, .ED_headline h3::after {
+  content: url('../img/before\ after.png');
+  padding-left: 27px;
+  padding-right: 27px;
+  vertical-align: 25%;
+}
+
+.ED_benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around ;
+  height: 620px;
+  width: 100%;
+  background-image: url('../img/ED.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%
+}
+
+.row{
+  width: 100;
+  display: flex;
+  justify-content: space-between;
+}
+
+.benefit_element {
+  display: flex;
+  width: 31%;
+}
+
+.pic {
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  width: 19%;
+}
+
+.pic.franse {
+  background-image: url('../img/France\ Smart\ Object.png');
+}
+
+.pic.berry {
+  background-image: url('../img/Strawberry.png');
+}
+
+.pic.quality {
+  background-image: url('../img/rst.png');
+}
+
+.pic.wellness {
+  background-image: url('../img/carrot.png');
+}
+
+.pic.low_calorie {
+  background-image: url('../img/shaker.png');
+}
+
+.pic.low_cost {
+  background-image: url('../img/cap.png');
+}
+
+.information_block {
+  display: flex;
+  flex-direction: column;
+  width: 75%;
+  margin-left: 3%;
+  font-size: 1em;
+  line-height: 1.5em;
+}
+
+.information_block p {
+  margin-top: 5%
+}
+
+.information_block p small {
+  color: #c1c1c1;
+}
+
+.information_block ul {
+  padding-left: 5%;
+}
+
+/* схема */
+
+.scheme_block {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10%; 
+
+}
+
+.scheme_headline {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.scheme_headline h1 {
+  font-size: 3.3em;
+  font-weight: 800;
+}
+
+.scheme {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 225px;
+  align-items: center;
+}
+
+.block {
+  height: 100%;
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; 
+  font-weight: 600;
+  font-size: 1.5em;
+}
+
+.img {
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.arrow {
+  height: 10%;
+  flex: 1;
+  background-image: url('../img/arrow.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+@media screen and (max-width: 1450px) {
+  .ED_benefits {
+    background-image: none;
+  }
+
+  .row {
+    justify-content: space-around;
+  }
+
+  .benefit_element {
+    width: 100%;
+  }
+
+  .scheme {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .row {
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
