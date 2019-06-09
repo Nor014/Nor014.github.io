@@ -13,8 +13,7 @@ let mousedown,
 
 function beginDraw() {
   if (drawTool.style.display === 'inline-block') {
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
-    ctx.beginPath()
+   
     mousedown = true;
     moveToX = event.offsetX;
     moveToY = event.offsetY;
@@ -46,19 +45,12 @@ function draw() {
     moveToX = event.offsetX;
     moveToY = event.offsetY;
 
-    // canvasThrottle(sendBlob, 100)
-
-    // setTimeout(function() {
-    //   sendBlob() 
-    // }, 1000)
-
   }
 }
 
 function stopDraw() {
   if (drawTool.style.display === 'inline-block') {
     sendBlob()
-    // ctx.clearRect(0, 0, canvas.width, canvas.height)
     mousedown = false;
     moveToX = null;
     moveToY = null;
@@ -83,6 +75,5 @@ function canvasThrottle(callback, delay) {
 function sendBlob() {
   canvas.toBlob(function (blob) {
     connection.send(blob)
-    ctx.clearRect(0, 0, canvas.width, canvas.height)
   })
 }
