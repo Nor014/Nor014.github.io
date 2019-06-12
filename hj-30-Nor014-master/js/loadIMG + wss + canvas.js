@@ -4,6 +4,16 @@ const newImgButton = document.querySelector('.menu__item.mode.new')
 let currentImgStatus = false;
 let urlWithId = false;
 
+// проверка закрытия вкладки
+if (sessionStorage.length === 0) {
+  localStorage.clear()
+}
+
+window.addEventListener('unload', () => {
+  sessionStorage.userLoggedIn = true;
+  wss.close(1000)
+})
+
 
 document.addEventListener('DOMContentLoaded', () => {
   const url = new URL(window.location.href)
@@ -85,6 +95,9 @@ function send(files) {
         form.parentNode.removeChild(form)
       })
 
+      // необходимо для переподключения вебсокета на новой картинке
+      isFirstConnection = true
+
       dataProcessing(data)
     })
 }
@@ -121,6 +134,7 @@ function dataProcessing(data) {
 
   currentImg.addEventListener('load', loadImg)
 
+
   // сортируем все комментарии по уникальным координатам 
   if (data.comments) {
     const forms = {};
@@ -155,7 +169,7 @@ function wss() {
     console.log(data)
 
     if (data.event === 'pic') {
-      if (data.pic.mask) canvas.style.backgroundImage = `url(${data.pic.mask})` 
+      if (data.pic.mask) canvas.style.backgroundImage = `url(${data.pic.mask})`
     }
 
     if (data.event === 'comment') {
