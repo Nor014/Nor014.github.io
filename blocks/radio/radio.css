@@ -1,0 +1,22 @@
+.radio__lable {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.radio__input {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #c6c6c6;
+  margin-right: 10px;
+  outline: none;
+  transition: 0.4s all;
+}
+
+.radio__input:checked {
+  background-color: #101010;
+}
+

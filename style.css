@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Tinos', serif;
+}
+
+.block {
+  margin-bottom: 20px;
+}
+
+/* .card {
+  padding: 30px 10px;
+  border: 1px solid lightsteelblue;
+  max-width: 300px;
+  min-height: 50px;
+  margin-bottom: 20px;
+  position: relative;
+} */
+
+.absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.main-page {
+  position: relative;
+}
+
