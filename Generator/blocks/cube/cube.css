@@ -1,0 +1,54 @@
+.cube {
+  width: 20px;
+  height: 20px;
+  background: #1f1f1f;
+  transition: 1s all;
+  position: relative;
+  z-index: 20;
+}
+
+.cube_theme_dark {
+  background: #ffffff;
+}
+
+.cube::before, .cube::after {
+  content: "";
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
+  border: 2px solid #1f1f1f;
+}
+
+.cube.cube_theme_dark::before, .cube.cube_theme_dark::after {
+  border: 2px solid #fff;
+}
+
+.cube.pulse::before {
+  animation-name: pulse;
+  animation-duration: 0.8s;
+  animation-delay: 0s;
+}
+
+.cube.pulse::after {
+  animation-name: nextPulse;
+  animation-duration: 0.8s;
+  animation-delay: 0.2s;
+}
+
+@keyframes pulse {
+  to {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}
+
+@keyframes nextPulse {
+  to {
+    transform: translate(-50%, -50%) scale(1.8);
+    opacity: 0;
+  }
+}

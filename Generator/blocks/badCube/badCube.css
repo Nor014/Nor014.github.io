@@ -1,0 +1,24 @@
+.bad-cube {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: absolute;
+  /* top: 50px; */
+  /* left: 50px; */
+  background-color: #CC1515;
+  box-shadow: 0 0 10px 0 #CC1515;
+}
+
+.prototype {
+  visibility: hidden;
+}
+
+.bad-cube__rect {
+  width: 7px;
+  height: 7px;
+  background-color: #CC1515;
+  box-shadow: 0 0 10px 0px #CC1515;
+}
+

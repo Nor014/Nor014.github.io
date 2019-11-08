@@ -1,0 +1,31 @@
+.content-menu {
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 100vh;
+  padding-top: 20px;
+}
+
+.menu__group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu__item {
+  background: white;
+  flex: 0 1 40%;
+  min-height: 150px;
+  margin-bottom: 20px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s all;
+}
+
+.menu__item:hover {
+  transform: scale(1.1);
+}
+
+.cube-wrap:hover {
+  transform: none;
+}

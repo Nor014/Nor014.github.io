@@ -1,0 +1,46 @@
+.button {
+  border: none;
+  background-color: transparent;
+  border-radius: 0;
+  outline: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.button_theme_disabled {
+  opacity: 0.5;
+}
+
+.button_theme_default {
+  background-color: #1f1f1f;
+  padding: 10px;
+  color: white;
+  min-width: 225px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px 0px #1f1f1f;
+  font-size: 14px;
+  transition: 0.3s all;
+  font-size: 15px;
+}
+
+.form__theme-change-button {
+  position: absolute;
+  right: 20px;
+  bottom: 0;
+  min-width: 80px;
+}
+
+.button_theme_dark {
+  background-color: #2ebbe4;
+  box-shadow: 0px 0px 10px 1px #2ebbe4;
+  /* color: #282828; */
+}
+
+@media screen and (max-width:800px) {
+  .button_theme_default {
+    min-width: 0;
+    max-width: 200px;
+    width: 100%;
+  }
+}
+
