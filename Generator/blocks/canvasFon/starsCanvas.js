@@ -1,6 +1,13 @@
 let starCanvas = document.querySelector('#canvas-stars'),
   starCtx = starCanvas.getContext('2d')
 
+let starsBtn = document.querySelector('.stars-btn')
+let starsAmount = 1200;
+
+starsBtn.addEventListener('click', () => {
+  starsAmount = Number(document.querySelector('.stars-input').value)
+})
+
 class Star {
   constructor() {
     this.x = Math.round(Math.random() * canvas.width);
@@ -49,7 +56,7 @@ function drawStars(amount, createNewStars = false) {
     }
 
     clearInterval(starsInterval);
-    starsInterval = setInterval(() => drawStars(1200), 100);
+    starsInterval = setInterval(() => drawStars(starsAmount), 100);
   }
 
   starsMass.forEach((star, index) => {

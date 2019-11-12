@@ -65,6 +65,13 @@
   margin: auto;
 }
 
+.stars-form {
+  position: absolute;
+  z-index: 100;
+  bottom: 50px;
+  left: 50px;
+}
+
 #canvas-planets {
   z-index: 10;
 }

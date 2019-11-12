@@ -84,7 +84,7 @@ function draw() {
     }
   } else {
     // инициализируется отрисовка всех канвасов
-    drawStars(1200, 5, true);
+    drawStars(starsAmount, 5, true);
     drawPoints(10, true);
     createComets(3, true);
     createGalaxy(3, true)

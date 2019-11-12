@@ -10,7 +10,7 @@ class Galaxy {
   constructor() {
     this.x = Math.round(Math.random() * galaxyCanvas.width);
     this.y = Math.round(Math.random() * galaxyCanvas.height);
-    this.radius = Math.round(Math.random() * (200 - 150) + 150)
+    this.radius = Math.round(Math.random() * (100 - 70) + 70)
     this.color = colorRandom();
     this.shadowBlur = Math.round(Math.random() * (200 - 100) + 100)
   }
@@ -26,7 +26,7 @@ class Galaxy {
       galaxyCtx.filter = 'blur(80px)'
 
       galaxyCtx.shadowColor = color;
-      galaxyCtx.shadowBlur = 100;
+      galaxyCtx.shadowBlur = 80;
 
       if (i === 0) {
         galaxyCtx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
@@ -37,12 +37,16 @@ class Galaxy {
       }
 
       if (i === 2) {
-        galaxyCtx.arc(this.x - this.radius * Math.random(), this.y + this.radius * Math.random(), this.radius, 0, Math.PI * 2);
+        galaxyCtx.arc(this.x - this.radius * Math.random(), this.y + this.radius * Math.random(), this.radius * 0.8, 0, Math.PI * 2);
       }
 
       if (i === 3) {
-        galaxyCtx.rect(this.x, this.y, this.x + 50, this.y + 50);
+        galaxyCtx.rect(this.x, this.y, Math.random() * 700, Math.random() * 700);
       }
+
+      // if (i === 4) {
+      //   galaxyCtx.rect(this.x - 300, this.y, this.x / 2, this.y + 50);
+      // }
 
       galaxyCtx.fill();
     }
