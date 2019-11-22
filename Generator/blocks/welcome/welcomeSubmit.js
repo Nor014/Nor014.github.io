@@ -29,7 +29,7 @@ function submitCheck() {
     document.querySelector('.welcome').classList.add('hide-welcome');
 
     // включаем spaceTheme
-    // let spaceTheme = new Audio('blocks/welcome/spaceTheme.mp3');
+    let spaceTheme = new Audio('blocks/welcome/spaceTheme.mp3');
     spaceTheme.loop = true;
     setTimeout(() => spaceTheme.play(), 500)
   } else {
