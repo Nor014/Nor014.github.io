@@ -30,8 +30,8 @@ function submitCheck() {
 
     // включаем spaceTheme
     // let spaceTheme = new Audio('blocks/welcome/spaceTheme.mp3');
-    // spaceTheme.loop = true;
-    // setTimeout(() => spaceTheme.play(), 500)
+    spaceTheme.loop = true;
+    setTimeout(() => spaceTheme.play(), 500)
   } else {
 
     if (!inputValue) {
